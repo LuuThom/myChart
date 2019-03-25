@@ -1,31 +1,32 @@
 - 
   var topSidebar = [
     {
-      item: "overview",
+      item: "Overview",
     },
     {
-      item : "order history",
+      item : "Order history",
+      active: true
     },
     {
-      item : "fluid layout",
+      item : "Fluid layout",
     },
     {
-      item :"icon nav",
+      item :"Icon nav",
     },
   ];
 -
   var overSidebar = [
     {
-      item : "toolkit docs",
+      item : "Toolkit docs",
     },
     {
-      item : "bootstrap docs",
+      item : "Bootstrap docs",
     },
     {
-      item: "light ui",
+      item: "Light ui",
     },
     {
-      item : "example modal",
+      item : "Example modal",
     },
   ];
 mixin nav()
@@ -33,7 +34,7 @@ mixin nav()
     h3.nav-dashboard__item.nav-dashboard__title dashboards
     each val in topSidebar
       li.nav-dashboard__item
-        a.nav-dashboard__link= val.item
+        a.nav-dashboard__link(class= val.active ? "active" : "")= val.item
   ul.nav-more
     h3.nav-more__item.nav-more__title more
     each val in overSidebar
@@ -43,10 +44,10 @@ mixin nav()
 mixin sidebar()
   .sidebar
     .sidebar__logo
-      .side__logo--page
+      .sidebar__logo--page
         a(href="#"): i.fas.fa-leaf
       form.form-control(action="#")
-        input.form-control__input(placehoder="Search...")
+        input.form-control__input(placeholder="Search...")
         button.form-control__submit
           i.btn-search.fas.fa-search
     .sidebar__nav

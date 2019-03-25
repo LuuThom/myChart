@@ -1,0 +1,17 @@
+include _variable.pug
+mixin countries()
+  each val in data1
+    a.data__item.pu(href="#")
+      span= val.name
+      span.count= val.percent
+        span.count %
+mixin visitpage()
+  each val in data2
+    a.data__item.pu(href="#")
+      span= val.name
+      span.count= val.percent
+mixin devices()
+  each val in decive
+    a.data__item.pu(href="#")
+      span= val.name
+      span.count= val.count

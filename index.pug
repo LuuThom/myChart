@@ -1,9 +1,10 @@
 include ./app/pug/_sidebar
-include ./app/pug/_section-main
 doctype html
 html
  include ./app/pug/_head
  body
   .container
    +sidebar()
+   include ./app/pug/_section-main
+   include ./app/pug/_source-js
    

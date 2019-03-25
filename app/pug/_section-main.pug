@@ -1,9 +1,40 @@
-//- .section-main
-//-   .section-main__intro
-//-     .intro-left
-//-       span dashboards
-//-       h2.title overview
-//-     .intro-right
-//-     .chart-js-minor
+include _data.pug
+.section-main
+  .section-main__intro
+    .intro-left
+      span dashboards
+      h2.title overview
+    .intro-right
+      input.form-control__input.form_datetime(size="16",type="text",value="01/01/15 - 01/08/15",readonly)
+      span.bv.bbc
+  .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top
+  //- canvas#doughnut-chart(width="191" height="191")
+  //- .section-main__quickstats
+  //-   h3.quick-states__title Quick states
+  //-   .quick-states__count 
+  //-     .quick-states__item
+  //- canvas#sparknine1(width="186" height="46")
+  .section-statistic
+    .col-md-6
+      h6.title Countries
+      +countries()
+      a.link(href="#") All countries
+    .col-md-6
+      h6.title Most visited pages
+      +visitpage()
+      a.link(href="#") View all pages
+    .col-md-12
+      h6.title Devices and resolutions
+      +devices()
+      a.link(href="#") View all devices
+      
+
+
+
+    
+
+
+
+            
 
   
