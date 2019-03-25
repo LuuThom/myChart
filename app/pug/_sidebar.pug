@@ -1,0 +1,53 @@
+- 
+  var topSidebar = [
+    {
+      item: "overview",
+    },
+    {
+      item : "order history",
+    },
+    {
+      item : "fluid layout",
+    },
+    {
+      item :"icon nav",
+    },
+  ];
+-
+  var overSidebar = [
+    {
+      item : "toolkit docs",
+    },
+    {
+      item : "bootstrap docs",
+    },
+    {
+      item: "light ui",
+    },
+    {
+      item : "example modal",
+    },
+  ];
+mixin nav()
+  ul.nav-dashboard
+    h3.nav-dashboard__item.nav-dashboard__title dashboards
+    each val in topSidebar
+      li.nav-dashboard__item
+        a.nav-dashboard__link= val.item
+  ul.nav-more
+    h3.nav-more__item.nav-more__title more
+    each val in overSidebar
+        li.nav-more__item
+          a.nav-more__link= val.item
+
+mixin sidebar()
+  .sidebar
+    .sidebar__logo
+      .side__logo--page
+        a(href="#"): i.fas.fa-leaf
+      form.form-control(action="#")
+        input.form-control__input(placehoder="Search...")
+        button.form-control__submit
+          i.btn-search.fas.fa-search
+    .sidebar__nav
+      +nav()
