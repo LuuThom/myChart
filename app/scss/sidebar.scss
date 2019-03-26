@@ -1,0 +1,144 @@
+$XS: 767px;   
+$SM: 991px;  
+$MD: 1024px;   
+$XL: 1200px;     
+@mixin responsive($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+.sidebar {
+  max-width: 25%;
+  margin-right: $mr;
+  padding-right: $mr;
+
+  display: flex;
+  flex-direction: column;
+
+  &__logo--page {
+    position: relative;
+    padding-bottom: $pd-bottom;
+    margin-top: 5px;
+
+    a {
+      display: block;
+      color: $color-gray;
+      cursor: pointer;
+
+      i {
+        font-size: 35px;
+      }
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+  }
+  @include responsive($SM) {
+    display: none;
+  }
+}
+.form-control {
+  position: relative;
+  margin-bottom: $mar-bottom;
+
+  &__input {
+    padding-left: $pd;
+    padding-right: $pd;
+    box-shadow: none;
+    display: block;
+    width: 86%;
+    padding: $pd-top $pd-left;
+    font-size: $font-size;
+    font-family: inherit;
+    line-height: 1.5;
+    color: $color-white;
+    background-color: $color-focus;
+    background-clip: padding-box;
+    border: 1px solid $color-focus;
+    border-radius: 0.25rem;
+    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:focus {
+      color: $color-input;
+      background-color: $color-white;
+      border-color: $bd1-color;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem $box-sh
+    }
+
+    input::placeholder {
+      color: $color-place;
+      display: block;
+
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    top: 1px;
+    right: 4px;
+    padding: 9px 10px;
+    color: $color-sub;
+    border: 0;
+    line-height: 0;
+    font-weight: $font-weight1;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus {
+      text-decoration: underline;
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+}
+.nav-dashboard,
+.nav-more {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  font-size: inherit;
+
+  &__item {
+    margin-bottom: 5px;
+    font-size: 80%;
+    font-weight: inherit;
+    letter-spacing: 1px;
+    color: $color-gray;
+  }
+
+  &__title {
+    margin: 0;
+    text-transform: uppercase;
+    padding-left: $pd;
+    padding-right: $pd;
+  }
+
+  &__link {
+    border-radius: 0.25rem;
+    color: #cfd2da;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all .1s;
+    cursor: pointer;
+    font-size: $font-size;
+    letter-spacing: 0;
+    &:hover {
+      color: $color-white;
+      transition: all .1s;
+    }
+  }
+
+  .active {
+    color: $color-white;
+    background-color: $color-active;
+  }
+}
+
+.nav-more {
+  margin-top: $pd-bottom;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid $color-focus;
+}
