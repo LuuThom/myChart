@@ -1,40 +1,230 @@
-include _data.pug
 .section-main
   .section-main__intro
     .intro-left
       span dashboards
       h2.title overview
     .intro-right
-      input.form-control__input.form_datetime(size="16",type="text",value="01/01/15 - 01/08/15",readonly)
+      input.form-control__input.form_datetime.js-form_datetime(size="16",type="text",value="01/01/15 - 01/08/15",readonly)
       span.bv.bbc
   .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top
-  //- canvas#doughnut-chart(width="191" height="191")
-  //- .section-main__quickstats
-  //-   h3.quick-states__title Quick states
-  //-   .quick-states__count 
-  //-     .quick-states__item
-  //- canvas#sparknine1(width="186" height="46")
+  .section-main__chart 
+    .chart-dougnut1
+      .canvas-wrapper
+        canvas#doughnut-chart1.canvas-chart.js-canvas-chart(
+        width="191" height="191" data-chart="doughnut" 
+        data-dataset="[230,130]" data-labels="Returning, New")
+      span traffic
+      h4 New vs Returning
+    .chart-dougnut2
+      .canvas-wrapper
+        canvas#doughnut-chart2.canvas-chart.js-canvas-chart(
+        width="191" height="191" data-chart="doughnut" 
+        data-dataset="[330,30]" data-labels="Returning, New")
+      span Revenue
+      h4 New vs Recurring
+    .chart-dougnut3
+      .canvas-wrapper
+        canvas#doughnut-chart3.canvas-chart.js-canvas-chart(
+        width="191" height="191" data-chart="doughnut" 
+        data-dataset="[100,260]" data-labels="Referrals, Direct")
+      span Traffic
+      h4 Direct vs Referrals
+  .section-main__quickstats.quick-states
+    h3.quick-states__title Quick states
+    .quick-states__count
+      .quick-states__item1.col-md-3
+        .quick-states__item--content
+          span PAGE VIEWS
+          h2 1,293
+          .index
+            span 5
+            span %
+              i.fas.fa-sort-up
+          hr
+        .quick-states__chart
+          canvas#sparknine1(width="378" height="94" data-chart="line" data-dataset="[28,68,41,43,96,45,100]")
+      .quick-states__item2.col-md-3
+        .quick-states__item--content
+          span DOWNLOADS
+          h2 758
+          .index
+            span 1.3
+            span %
+              i.fas.fa-sort-down
+          hr
+        .quick-states__chart
+          canvas#sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[4,34,64,27,96,50,80]")
+      .quick-states__item3.col-md-3
+        .quick-states__item--content
+          span SIGN-UPS
+          h2 1,293
+          .index
+            span 5
+            span %
+              i.fas.fa-sort-up
+          hr
+        .quick-states__chart
+          canvas#sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[12,38,32,60,36,54,68]")
+      .quick-states__item4.col-md-3
+        .quick-states__item--content
+          span DOWNLOADS
+          h2 758
+          .index
+            span 1.3
+            span %
+              i.fas.fa-sort-down
+          hr
+        .quick-states__chart
+          canvas#sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[43,48,52,58,50,95,100]")
   .section-statistic
-    .col-md-6
-      h6.title Countries
-      +countries()
+    .col-md-6.countries
+      h6.countries__title Countries
+      -
+        var data1 = [
+          {
+            name: "united states",
+            percent: "62.4"
+          },
+          {
+            name: "india",
+            percent: "15.0"
+          },
+          {
+            name: "united kingdom",
+            percent: "5.0"
+          },
+          {
+            name: "canada",
+            percent: "5.0"
+          },
+          {
+            name: "russia",
+            percent: "4.5"
+          },
+          {
+            name : "mexico",
+            percent: "2.3"
+          },
+          {
+            name: "spain",
+            percent: "1.7"
+          },
+          {
+            name: "france",
+            percent: "1.5"
+          },
+          {
+            name: "south africa",
+            percent: "1.4"
+          },
+          {
+            name: "japan",
+            percent: "1.2",
+          },
+        ];
+      .data-table
+        each val,index in data1
+          a.countries__item.pu.last(href="#")= val.name
+            span.countries__item--percent= val.percent+ "%"
+            span.count(style="width:"+val.percent+"%")
       a.link(href="#") All countries
-    .col-md-6
-      h6.title Most visited pages
-      +visitpage()
+    .col-md-6.visited-pages
+      h6.visited-pages__title Most visited pages
+      -
+        var data2 = [
+          {
+            name: "/(Logged out)",
+            percent: "3,929,481"
+          },
+          {
+            name: "/(Logged in)",
+            percent: "1,143,393"
+          },
+          {
+            name: "/tuor",
+            percent: "938,287"
+          },
+          {
+            name: "/features/something",
+            percent: "749,393"
+          },
+          {
+            name: "/features/another-thing",
+            percent: "695,912"
+          },
+          {
+            name : "/users/username",
+            percent: "501,938"
+          },
+          {
+            name : "/page-title",
+            percent: "392,842"
+          },
+          {
+            name: "/some/page-slug",
+            percent: "298,183"
+          },
+          {
+            name: "/another/directory/and/page-title",
+            percent: "193,129"
+          },
+          {
+            name: "/one-more/page/directory/file-name",
+            percent: "93,382"
+          },
+        ];
+      .data-table
+        each val in data2
+          a.visited-pages__item.pu(href="#")= val.name
+            span.countries__item--percent= val.percent
       a.link(href="#") View all pages
-    .col-md-12
-      h6.title Devices and resolutions
-      +devices()
+    .col-md-12.devices-resolutions
+      h6.devices-resolutions__title Devices and resolutions
+      -
+          var devices = [
+            {
+              item: "Desktop (1920x1080)",
+              count: "3,929,481",
+            },
+            {
+              item: "Desktop (1366x768)",
+              count: "1,143,393",
+            },
+            {
+              item: "Desktop (1440x900)",
+              count: "938,287",
+            },
+            {
+              item: "Desktop (1280x800)",
+              count: "749,393",
+            },
+            {
+              item: "Tablet (1024x768)",
+              count: "695,912",
+            },
+            {
+              item: "Tablet (768x1024)",
+              count: "501,938",
+            },
+            {
+              item: "Phone (320x480)",
+              count: "392,842",
+            },
+            {
+              item: "Phone (720x450)",
+              count: "298,183",
+            },
+            {
+              item: "Desktop (2560x1080)",
+              count: "193,129",
+            },
+            {
+              item: "Desktop (2560x1600)",
+              count: "93,382",
+            },
+          ]
+      .data-table
+        each val in devices
+          a.devices-resolutions__item.pu(href="#")= val.item
+            span.countries__item--percent= val.count
       a.link(href="#") View all devices
-      
-
-
-
-    
-
-
-
-            
-
-  
