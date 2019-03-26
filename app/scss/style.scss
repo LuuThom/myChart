@@ -199,7 +199,7 @@ body {
       cursor: pointer;
 
       i {
-        font-size: 40px;
+        font-size: 35px;
       }
 
       &:hover {
@@ -602,7 +602,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-
+    padding-top: 2rem;
     .chart-dougnut1,
     .chart-dougnut2,
     .chart-dougnut3 {

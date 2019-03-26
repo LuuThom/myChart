@@ -157,7 +157,7 @@ body {
 }
 
 .sidebar__logo--page a i {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 .sidebar__logo--page a:hover {
@@ -635,6 +635,7 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   width: 100%;
+  padding-top: 2rem;
 }
 
 .section-main__chart .chart-dougnut1,
