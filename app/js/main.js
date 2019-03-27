@@ -73,5 +73,11 @@ $(document).ready(function () {
   });
   $(".js-nav-toggle").on('click',function(){
     $(".js-sidebar").slideToggle();
-  })
+  });
+
+  $(window).resize(function () { 
+    if($(this).width() > 768) {
+      $(".js-sidebar").removeAttr("style");
+    }
+  });
 })
