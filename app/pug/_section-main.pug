@@ -127,7 +127,7 @@
           a.countries__item.pu.last(href=".")= val.name
             span.countries__item--percent= val.percent+ "%"
             span.count(style="width:"+val.percent+"%")
-      a.link(href=".") All countries
+      a.countries__link(href=".") All countries
     .col-md-6.visited-pages
       h6.visited-pages__title Most visited pages
       -
@@ -177,7 +177,7 @@
         each val in data2
           a.visited-pages__item.pu(href=".")= val.name
             span.countries__item--percent= val.percent
-      a.link(href=".") View all pages
+      a.visited-pages__link(href=".") View all pages
     .col-md-12.devices-resolutions
       h6.devices-resolutions__title Devices and resolutions
       -
@@ -227,4 +227,4 @@
         each val in devices
           a.devices-resolutions__item.pu(href=".")= val.item
             span.countries__item--percent= val.count
-      a.devices-resolutions __link(href=".") View all devices
+      a.devices-resolutions__link(href="#") View all devices

@@ -1,17 +1,9 @@
-$XSX: 767px;
-$XS: 768px;   
-$SM: 992px;  
-$MD: 1024px;   
-$XL: 1200px;       
-@mixin responsive($width) {
-  @media only screen and (min-width: $width) {
-    @content;
-  }
-}
-@mixin responsivepc($width) {
-  @media only screen and (max-width: $width) {
-    @content;
-  }
+body {
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 0.95rem;
+  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: $quick-state-title-bgcolor;
 }
 .container {
   padding-top: 50px;
@@ -58,7 +50,7 @@ $XL: 1200px;
     max-width: calc(25% - 20px);
     box-sizing: border-box;
     margin: 0;
-    margin-right: 20px;
+    // margin-right: 20px;
 
   }
   @include responsivepc($XSX) {

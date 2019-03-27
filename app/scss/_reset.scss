@@ -2,19 +2,4 @@
   margin: 0;
   padding: 0;
 }
-body {
-  line-height: 1.5;
-  font-weight: 300;
-  font-size: 0.95rem;
-  font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: $quick-state-title-bgcolor;
-}
-$XS: 767px;   
-$SM: 991px;  
-$MD: 1024px;   
-$XL: 1200px;     
-@mixin responsive($width) {
-  @media only screen and (max-width: $width) {
-    @content;
-  }
-}
+
