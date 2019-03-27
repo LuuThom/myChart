@@ -65,8 +65,8 @@
       position: absolute;
       top: 2px;
       right: 0;
-      color: #434857;
-      border-color: #434857;
+      color: $color-focus;
+      border-color: $color-focus;
       border: 1px solid;
       justify-content: center;
       &:focus {
@@ -100,7 +100,7 @@
 
   &__link {
     border-radius: 0.25rem;
-    color: #cfd2da;
+    color: $link-color;
     display: block;
     padding: 0.5rem 1rem;
     transition: all .1s;
