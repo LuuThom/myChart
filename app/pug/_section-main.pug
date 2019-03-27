@@ -10,21 +10,21 @@
   .section-main__chart 
     .chart-dougnut1
       .canvas-wrapper
-        canvas#doughnut-chart1.canvas-chart.js-canvas-chart(
+        canvas.doughnut-chart1.canvas-chart.js-canvas-chart(
         width="191" height="191" data-chart="doughnut" 
         data-dataset="[230,130]" data-labels="Returning, New")
       span traffic
       h4 New vs Returning
     .chart-dougnut2
       .canvas-wrapper
-        canvas#doughnut-chart2.canvas-chart.js-canvas-chart(
+        canvas.doughnut-chart2.canvas-chart.js-canvas-chart(
         width="191" height="191" data-chart="doughnut" 
         data-dataset="[330,30]" data-labels="Returning, New")
       span Revenue
       h4 New vs Recurring
     .chart-dougnut3
       .canvas-wrapper
-        canvas#doughnut-chart3.canvas-chart.js-canvas-chart(
+        canvas.doughnut-chart3.canvas-chart.js-canvas-chart(
         width="191" height="191" data-chart="doughnut" 
         data-dataset="[100,260]" data-labels="Referrals, Direct")
       span Traffic
@@ -42,7 +42,7 @@
               i.fas.fa-sort-up
           hr
         .quick-states__chart
-          canvas#sparknine1(width="378" height="94" data-chart="line" data-dataset="[28,68,41,43,96,45,100]")
+          canvas.sparknine1(width="378" height="94" data-chart="line" data-dataset="[28,68,41,43,96,45,100]")
       .quick-states__item2.col-md-3
         .quick-states__item--content
           span DOWNLOADS
@@ -53,7 +53,7 @@
               i.fas.fa-sort-down
           hr
         .quick-states__chart
-          canvas#sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[4,34,64,27,96,50,80]")
+          canvas.sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[4,34,64,27,96,50,80]")
       .quick-states__item3.col-md-3
         .quick-states__item--content
           span SIGN-UPS
@@ -64,7 +64,7 @@
               i.fas.fa-sort-up
           hr
         .quick-states__chart
-          canvas#sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[12,38,32,60,36,54,68]")
+          canvas.sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[12,38,32,60,36,54,68]")
       .quick-states__item4.col-md-3
         .quick-states__item--content
           span DOWNLOADS
@@ -75,7 +75,7 @@
               i.fas.fa-sort-down
           hr
         .quick-states__chart
-          canvas#sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[43,48,52,58,50,95,100]")
+          canvas.sparknine1.js-parkline1(width="378" height="94" data-chart="line" data-dataset="[43,48,52,58,50,95,100]")
   .section-statistic
     .col-md-6.countries
       h6.countries__title Countries
@@ -124,10 +124,10 @@
         ];
       .data-table
         each val,index in data1
-          a.countries__item.pu.last(href="#")= val.name
+          a.countries__item.pu.last(href=".")= val.name
             span.countries__item--percent= val.percent+ "%"
             span.count(style="width:"+val.percent+"%")
-      a.link(href="#") All countries
+      a.link(href=".") All countries
     .col-md-6.visited-pages
       h6.visited-pages__title Most visited pages
       -
@@ -175,9 +175,9 @@
         ];
       .data-table
         each val in data2
-          a.visited-pages__item.pu(href="#")= val.name
+          a.visited-pages__item.pu(href=".")= val.name
             span.countries__item--percent= val.percent
-      a.link(href="#") View all pages
+      a.link(href=".") View all pages
     .col-md-12.devices-resolutions
       h6.devices-resolutions__title Devices and resolutions
       -
@@ -225,6 +225,6 @@
           ]
       .data-table
         each val in devices
-          a.devices-resolutions__item.pu(href="#")= val.item
+          a.devices-resolutions__item.pu(href=".")= val.item
             span.countries__item--percent= val.count
-      a.link(href="#") View all devices
+      a.link(href=".") View all devices

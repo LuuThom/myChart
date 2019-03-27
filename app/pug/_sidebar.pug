@@ -46,9 +46,11 @@ mixin sidebar()
     .sidebar__logo
       .sidebar__logo--page
         a(href="#"): i.fas.fa-leaf
+        button.navbar-toggle.js-nav-toggle
+          i.fas.fa-bars
+    .sidebar__nav.js-sidebar
       form.form-control(action="#")
         input.form-control__input(placeholder="Search...")
         button.form-control__submit
           i.btn-search.fas.fa-search
-    .sidebar__nav
       +nav()

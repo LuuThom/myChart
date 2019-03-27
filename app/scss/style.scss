@@ -2,34 +2,9 @@
 @import "reset.scss";
 @import "sidebar.scss";
 @import "body.scss";
-$XS: 767px;   
-$SM: 991px;  
-$MD: 1024px;   
-$XL: 1200px;     
-@mixin responsive($width) {
-  @media only screen and (max-width: $width) {
-    @content;
-  }
-}
-.container {
-  max-width: 1100px;
-  padding-top: 50px;
-  width: 100%;
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-  box-sizing: border-box;
-  @include responsive($XL) {
-    max-width: 1100px;
-    padding-top: 50px;
-  }
-  @include responsive($SM) {
-    max-width: 950px;
-  }
+@import "global.scss";
+ 
   
-}
 
 
 

@@ -1,8 +1,16 @@
-$XS: 767px;   
-$SM: 991px;  
+@import "font.scss";
+@import "variable.scss";
+$XSX: 767px;
+$XS: 768px;   
+$SM: 992px;  
 $MD: 1024px;   
-$XL: 1200px;     
+$XL: 1200px;       
 @mixin responsive($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin responsivepc($width) {
   @media only screen and (max-width: $width) {
     @content;
   }
@@ -11,7 +19,7 @@ $XL: 1200px;
   max-width: 25%;
   margin-right: $mr;
   padding-right: $mr;
-
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
 
@@ -33,67 +41,57 @@ $XL: 1200px;
         color: $color-hover;
       }
     }
+    .navbar-toggle {
+      display: none;
+    }
   }
   @include responsive($SM) {
-    display: none;
+    margin-right: 0;
   }
-}
-.form-control {
-  position: relative;
-  margin-bottom: $mar-bottom;
-
-  &__input {
-    padding-left: $pd;
-    padding-right: $pd;
-    box-shadow: none;
-    display: block;
-    width: 86%;
-    padding: $pd-top $pd-left;
-    font-size: $font-size;
-    font-family: inherit;
-    line-height: 1.5;
-    color: $color-white;
-    background-color: $color-focus;
-    background-clip: padding-box;
-    border: 1px solid $color-focus;
-    border-radius: 0.25rem;
-    -webkit-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-
-    &:focus {
-      color: $color-input;
-      background-color: $color-white;
-      border-color: $bd1-color;
-      outline: 0;
-      box-shadow: 0 0 0 0.2rem $box-sh
+  @include responsivepc($XSX) {
+    max-width: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+    margin-right: 0;
+    padding-right: 0;
+    &__logo {
+      width: 100%;
+      &--page {
+        padding-bottom: 20px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
     }
-
-    input::placeholder {
-      color: $color-place;
+    .sidebar__nav {
+      display: none;
+      margin-bottom: 1rem;
+    }
+    .navbar-toggle {
       display: block;
-
-    }
-  }
-
-  &__submit {
-    position: absolute;
-    top: 1px;
-    right: 4px;
-    padding: 9px 10px;
-    color: $color-sub;
-    border: 0;
-    line-height: 0;
-    font-weight: $font-weight1;
-    background-color: transparent;
-    cursor: pointer;
-
-    &:focus {
-      text-decoration: underline;
-      border-color: transparent;
-      box-shadow: none;
+      width: 40px;
+      display: flex;
+      padding: 7px 8px;
+      font-size: 16px;
+      background: transparent;
+      border-radius: 0.25rem;
+      position: absolute;
+      top: 2px;
+      right: 0;
+      color: #434857;
+      border-color: #434857;
+      border: 1px solid;
+      justify-content: center;
+      &:focus {
+        color: $color-white;
+      }
     }
   }
 }
+
 .nav-dashboard,
 .nav-more {
   margin: 0;
