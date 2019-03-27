@@ -291,7 +291,7 @@
   .countries,
   .visited-pages,
   .devices-resolutions {
-    .link {
+    &__link {
       text-transform: none;
       text-decoration: none;
       outline: none;
@@ -359,14 +359,14 @@
         color: white;
       }
 
-      .canvas-wrapper {
+      &__wrapper {
         max-width: 80%;
         margin: auto;
       }
     }
 
     .canvas-chart {
-      width: 100% !important;
+      width: 100%;
       margin-bottom: 1rem;
     }
 
@@ -388,7 +388,7 @@
       .chart-dougnut1,
       .chart-dougnut2,
       .chart-dougnut3 {
-        .canvas-wrapper {
+        &__wrapper {
           width: 100%;
         }
 
@@ -400,7 +400,7 @@
   }
 
   .day {
-    padding: 4px 8px;
+    padding: 4px 5px;
     cursor: pointer;
   }
 

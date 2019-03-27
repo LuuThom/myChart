@@ -7,23 +7,23 @@
       input.form-control__input.form_datetime.js-form_datetime(size="16",type="text",value="01/01/15 - 01/08/15",readonly)
       span.bv.bbc
   .datepicker.datepicker-dropdown.dropdown-menu.datepicker-orient-left.datepicker-orient-top
-  .section-main__chart 
+  .section-main__chart
     .chart-dougnut1
-      .canvas-wrapper
+      .chart-dougnut1__wrapper
         canvas.doughnut-chart1.canvas-chart.js-canvas-chart(
-        width="191" height="191" data-chart="doughnut" 
+        width="191" height="191" data-chart="doughnut"
         data-dataset="[230,130]" data-labels="Returning, New")
       span traffic
       h4 New vs Returning
     .chart-dougnut2
-      .canvas-wrapper
+      .chart-dougnut2__wrapper
         canvas.doughnut-chart2.canvas-chart.js-canvas-chart(
         width="191" height="191" data-chart="doughnut" 
         data-dataset="[330,30]" data-labels="Returning, New")
       span Revenue
       h4 New vs Recurring
     .chart-dougnut3
-      .canvas-wrapper
+      .chart-dougnut3__wrapper
         canvas.doughnut-chart3.canvas-chart.js-canvas-chart(
         width="191" height="191" data-chart="doughnut" 
         data-dataset="[100,260]" data-labels="Referrals, Direct")
@@ -227,4 +227,4 @@
         each val in devices
           a.devices-resolutions__item.pu(href=".")= val.item
             span.countries__item--percent= val.count
-      a.link(href=".") View all devices
+      a.devices-resolutions __link(href=".") View all devices
