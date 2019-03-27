@@ -47,6 +47,12 @@ $XL: 1200px;
   border-radius: 3px;
   margin-left: 10px;
   margin-right: 10px;
+  @include responsive($XS) {
+    max-width: calc(50% - 20px);
+    margin: 0;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
   @include responsive($SM) {
     flex: 0 0 25%;
     max-width: calc(25% - 20px);

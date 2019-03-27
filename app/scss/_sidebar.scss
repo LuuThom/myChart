@@ -1,20 +1,3 @@
-@import "font.scss";
-@import "variable.scss";
-$XSX: 767px;
-$XS: 768px;   
-$SM: 992px;  
-$MD: 1024px;   
-$XL: 1200px;       
-@mixin responsive($width) {
-  @media only screen and (min-width: $width) {
-    @content;
-  }
-}
-@mixin responsivepc($width) {
-  @media only screen and (max-width: $width) {
-    @content;
-  }
-}
 .sidebar {
   max-width: 25%;
   margin-right: $mr;
@@ -47,6 +30,7 @@ $XL: 1200px;
   }
   @include responsive($SM) {
     margin-right: 0;
+    padding-right: 20px;
   }
   @include responsivepc($XSX) {
     max-width: 100%;
