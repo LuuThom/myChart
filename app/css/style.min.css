@@ -687,12 +687,10 @@
   cursor: pointer;
 }
 
-.datepicker-days .active {
-  color: #fff;
-  background-color: #137499;
-  border-color: #126c8d;
-  text-align: center;
-  border-radius: 4px;
+.active.day {
+  background-color: #137499 !important;
+  border-color: #126c8d !important;
+  background-image: none !important;
 }
 
 .sparknine1 {

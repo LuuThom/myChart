@@ -404,15 +404,13 @@
     padding: 4px 5px;
     cursor: pointer;
   }
-
-  .datepicker-days .active {
-    color: $color-white;
-    background-color: $datepicker-days-active-color;
-    border-color: $datepicker-days-active-bdcolor;
-    text-align: center;
-    border-radius: 4px;
+  
+  .active.day{   
+    background-color: $datepicker-days-active-color  !important;
+    border-color: $datepicker-days-active-bdcolor!important;
+    background-image: none !important;
   }
-
+  
   .sparknine1 {
     width: 100%;
   }
